@@ -6,7 +6,17 @@ namespace CodingClassApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            /// Object Initialization where you assign values when instantiating the class first time itself
+            var CSharpClass_Sunday = new CSharpClass()
+            {
+                DurationOfClass = 12,
+                ClassFee = 420.00
+                
+            };
+            Console.WriteLine($"QCd: {CSharpClass_Sunday.QRCode}, Fee: {CSharpClass_Sunday.ClassFee:C}, SD:{CSharpClass_Sunday.StartDate}");
+            
+            
+
         }
     }
 }

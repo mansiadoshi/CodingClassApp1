@@ -9,37 +9,50 @@ namespace CodingClassApp1
     /// </summary>
     class CSharpClass
     {
+
         #region Properties
+        private static int LastQRCode = 0;
+        /// <summary>
+        /// Generates QR code for the class
+        /// </summary>
+        public int QRCode { get; set; }
         /// <summary>
         /// Start date for the class
         /// </summary>
-        private int StartDate { get; set; }
+        public DateTime StartDate { get; set; }
         /// <summary>
         /// End date for the class
         /// </summary>
-        private int EndDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         /// <summary>
         /// Total students enrolled in the class
         /// </summary>
-        public int TotalStudentsEnrolled { get; set; }
+        private int TotalStudentsEnrolled { get; set; }
         /// <summary>
         /// Duration of the class
         /// </summary>
-        private int DurationOfClass { get; set; }
+        public int DurationOfClass { get; set; }
         /// <summary>
         /// Minimum students for the class
         /// </summary>
-        public int MinLimit{ get; set; }
+        private int MinLimit{ get; set; }
         /// <summary>
         /// Maximum students for the class
         /// </summary>
-        public int MaxLimit { get; set; }
+        private int MaxLimit { get; set; }
         /// <summary>
         /// Class Tuition
         /// </summary>
-        public decimal ClassFee { get; set; }
+        public double ClassFee { get; set; }
 
+        #endregion
+        #region Constructors
+        public CSharpClass()
+        {
+            QRCode = ++LastQRCode;
+            StartDate = DateTime.Now;
+        }
         #endregion
         #region Methods
         /// <summary>
@@ -76,6 +89,11 @@ namespace CodingClassApp1
                 Console.WriteLine("Class is cancelled");
             }
         }
+
+        //public static implicit operator CSharpClass(CSharpClass v)
+       /* {
+            throw new NotImplementedException();
+        }*/
 
         #endregion
     }
